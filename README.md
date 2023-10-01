@@ -8,7 +8,7 @@ WalletCasino is a tool designed to generate and check Binance Smart Chain (BSC) 
 ## Installation Instructions
 Clone the repository:
 
-    git clone [repository URL]
+    git clone https://github.com/Markkotik/WalletCasino.git
 
 Install the necessary dependencies:
 
