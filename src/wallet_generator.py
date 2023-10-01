@@ -5,7 +5,7 @@ from bip_utils import (
     Bip39MnemonicGenerator, Bip39WordsNum
 )
 from web3 import Web3
-from .config import BSC_NODE_ENDPOINT, WALLETS_WITH_BALANCE_FILENAME
+from .config import BSC_NODE_ENDPOINT, WALLETS_WITH_BALANCE_FILENAME, LOGGING_ENABLE
 
 logging.basicConfig(filename="wallets.log", level=logging.INFO,
                     format="%(asctime)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S")
@@ -30,11 +30,11 @@ class BSCWalletGenerator:
         self._generate_wallet_from_seed()
         has_balance = self._check_balance()
 
-        log_message = self._generate_log_message()
-        logging.info(log_message)
+        if LOGGING_ENABLE:
+            logging.info(self._generate_log_message())
 
         if has_balance:
-            self._save_wallet_to_file(log_message)
+            self._save_wallet_to_file(self._generate_log_message())
             return has_balance
 
     def _generate_log_message(self) -> str:
