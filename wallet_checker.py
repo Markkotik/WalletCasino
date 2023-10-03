@@ -1,16 +1,18 @@
 import threading
 
 from src.config import NUMBER_OF_THREADS
-from src.wallet_generator import BSCWalletGenerator
+from src.wallet_generator import WalletGenerator
 
 
 def run_wallet_generator():
-    generator = BSCWalletGenerator()
+    generator = WalletGenerator()
     if generator.create_and_check_wallet():
         print(f"Non-zero balance found!")
 
 
 if __name__ == "__main__":
+    print("Bot started")
+
     while True:
         threads = []
         for _ in range(NUMBER_OF_THREADS):
