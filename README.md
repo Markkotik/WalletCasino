@@ -1,7 +1,7 @@
 # WalletCasino
 
 Dive into the vast ocean of blockchain wallets! While the odds of hitting a jackpot with a non-zero balance might be slim, with WalletCasino, you can test your luck across multiple networks. 🎰
-
+![img.png](imgs_for_readme%2Fimg.png)
 ## Overview
 
 WalletCasino is an advanced tool that can generate and check wallet balances for both Binance Smart Chain (BSC) and Ethereum networks. When you come across a wallet with transactions, the tool immediately saves the wallet details into a separate file. 
