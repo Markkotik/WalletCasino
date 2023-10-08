@@ -7,7 +7,7 @@ from src.wallet_generator import WalletGenerator
 def run_wallet_generator():
     generator = WalletGenerator()
     if generator.create_and_check_wallet():
-        print(f"Non-zero balance found!")
+        print(f"Wallet with transactions found!")
 
 
 if __name__ == "__main__":
