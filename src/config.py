@@ -29,3 +29,6 @@ LOGGING_ENABLE = os.environ.get('LOGGING_ENABLE', True)
 
 # Check Ethereum network or not. Default is false, override with 'CHECK_ETH'.
 CHECK_ETH = os.environ.get('CHECK_ETH', False)
+
+# This is a file for seed phrases, defaulting to 'raw.txt'. Each phrase is on a new line.
+FILE_WITH_WALLETS = os.environ.get('FILE_WITH_WALLETS', 'raw.txt')

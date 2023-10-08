@@ -43,36 +43,47 @@ Before starting, ensure you have Python and pip installed.
 
 ## Configuration
 
-You can fine-tune the tool's behavior using the `src/config.py` file or environment variables:
+To customize the behavior of this tool, adjust settings in the `src/config.py` file or set environment variables:
 
-1. **BSC Nodes**: List of BSC node endpoints. Defaults include several from Binance.
+1. **BSC Nodes**: A list of BSC node endpoints. The default includes several from Binance.
 
-2. **ETH Nodes**: Endpoint(s) to connect to the Ethereum nodes.
+2. **ETH Nodes**: Endpoint(s) for connecting to Ethereum nodes.
 
-3. **Number of Threads**: Adjust the concurrency for wallet generation and checking.
+3. **Number of Threads**: Configure concurrency for wallet generation and checking. The default is 16.
 
-4. **Logging**: Control whether logging is enabled or not.
+4. **Logging**: Determine if logging is active. It is enabled by default.
 
-5. **Network Choice**: Decide if you want to check the Ethereum network.
+5. **Network Choice**: Specify whether to check the Ethereum network. It is turned off by default.
 
-For environment variables, you can override defaults. For instance:
+6. **File with Wallets**: This file contains seed phrases with the default name 'raw.txt'. Each phrase should be on a separate line.
+
+To override the default settings via environment variables, execute:
 
 ```bash
 export BSC_NODES=https://your-bsc-node-endpoint.com/
 export ETH_NODES=https://your-eth-node-endpoint.com/
+export FILE_WITH_WALLETS=path/to/your/file.txt
 ```
 
-Please refer to `src/config.py` for all the adjustable parameters and their default values.
+For a full list of adjustable parameters and their defaults, please check `src/config.py`.
 
 ## Usage
 
-1. Once you have configured the settings, run the script:
+1. Once settings are adjusted, select the desired script:
+
+   - For random wallet checking:
 
     ```bash
     python wallet_checker.py
     ```
 
-2. Monitor the output or the designated file to check if any wallet with a balance has been found.
+   - For file checking:
+
+    ```bash
+    python file_checker.py
+    ```
+
+2. When a wallet with transactions is found, a message is displayed in the console. Wallet data will be saved in a separate file "wallets_with_transactions.log"
 
 ## License
 
